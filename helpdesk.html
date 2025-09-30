@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Creating an HTML form">
+        <meta name="keywords" content="HTML Form">
+        <meta name="author" content="Tran Nguyen Phuc Vinh">
+        <title>CWA Help Desk Appointment</title>
+    </head>
+    <body>
+        <img src="logo.png" alt="logo" width="200" height="100">
+        <h1>CWA Help Desk Appointment</h1>
+        <p>The Help Desk is located in ATC620. Open 10:30 to 19:00 Monday to Friday</p>
+        <p>Check Blackboard for when CWA tutors will be there</p>
+        
+        <form method="post" action="DATA.txt">
+            <fieldset>
+                <legend>Student details </legend>
+                <br><br>
+                    <label  for="StudentID">Student ID</label> 
+                    <input  type="text" name= "StudentID" id="StudentID"
+                            pattern="[0-9]{7-10}"
+                            title="7-10 digit Student ID" required="required">
+                <br><br>
+                    <label  for="givenName">Given Name</label>
+                    <input  type="text" id="givenName" name="givenName" maxlength="15"
+                            pattern="[A-Za-z]+"
+                            title="Alphabetical characters only" required="required">
+                    
+                    <label  for="familyName">Family Name</label>
+                    <input  type="text" id="familyName" name="familyName" maxlength="15"
+                            pattern="[A-Za-z]+"
+                            title="Alphabetical characters only" required="required">
+                <br><br>
+
+            </fieldset>
+            <fieldset>
+                <legend>Your unit</legend>
+                    <input type="radio" id="COS10011" name="COS" value="COS10011" required="required">
+                    <label for="COS10011">COS10011</label> 
+
+                    <input type="radio" id="COS60004" name="COS" value="COS60004" required="required">
+                    <label for="COS60004">COS60004</label> 
+                    
+                    <input type="radio" id="COS60007" name="COS" value="COS60007" required="required">
+                    <label for="COS60007">COS60007</label> 
+                <br><br>
+
+                    <label for="tutor">Tutor Name</label>
+                    <select id="tutor" name="tutor" required="required">
+                        <option value="">-- Please Select --</option>
+                        <option value="goldstein">Dr. Goldstein</option>
+                        <option value="soytan">Ms. Soytan</option>
+                        <option value="lee">Mr. Lee</option>
+                        <option value="Groyper">Dr. D. Groyper</option>
+                        <option value="Gassy">Dr. Gassy</option>
+                    </select>
+                <br><br>
+            </fieldset>
+            <fieldset>
+                    <legend>Issue</legend>
+                        <label for="HTML">HTML</label> 
+                        <input type="checkbox" id="HTML" name="category[]" value="HTML" checked="checked">
+                        
+                        <label for="CSS">CSS</label> 
+                        <input type="checkbox" id="CSS" name="category[]" value="CSS">
+
+                        <label for="Javascript">Javascript</label> 
+                        <input type="checkbox" id="Javascript" name="category[]" value="Javascript">
+
+                        <label for="PHP">PHP</label> 
+                        <input type="checkbox" id="PHP" name="category[]" value="PHP">
+                        
+                        <label for="MySQL">MySQL</label> 
+                        <input type="checkbox" id="MySQL" name="category[]" value="MySQL">
+
+                    <br><br>
+
+                        <label for="comments">Description of issue</label><br>
+                        <textarea id="comments" name="comments" rows="4" cols="40" placeholder="Write description of your problem here..."></textarea>
+
+            </fieldset>
+            <fieldset>
+                    <legend>Preferred Date / Time </legend>
+                        <label for="date">Date</label> 
+			            <input type="text" name= "date" id="date" placeholder="dd/mm/yyyy"
+                               pattern="^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$"
+                               title="Enter a valid date as dd/mm/yyyy (e.g., 25-09-2025)" required="required">
+                    <br><br>
+
+                        <label for="time">Time</label> 
+			            <input type="text" name= "time" id="time" placeholder="00:00" 
+                               pattern="\d{2}:\d{2}" required="required">
+                    
+            </fieldset>
+            <input type= "submit" value="Book">
+            <input type= "reset" value="Reset Form">
+        </form>
+    </body>
+</html>
